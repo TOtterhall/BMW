@@ -1,10 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
-
-function Model(props) {
-  const { scene } = useGLTF("/bmw.glb");
-  return <primitive object={scene} {...props} />;
-}
+import Car from "./components/Car/Car";
 
 function App() {
   return (
@@ -23,7 +19,7 @@ function App() {
           polar={[-0.1, Math.PI / 4]}
         >
           <Stage enviroment={null}>
-            <Model scale={0.01} />
+            <Car scale={0.01} />
           </Stage>
         </PresentationControls>
       </Canvas>
